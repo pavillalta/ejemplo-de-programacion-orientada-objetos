@@ -26,6 +26,7 @@ Partial Class RegistroAlumno
         Me.TxtCodigo = New System.Windows.Forms.TextBox()
         Me.btnGenerar = New System.Windows.Forms.Button()
         Me.grpDatos = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -35,18 +36,27 @@ Partial Class RegistroAlumno
         Me.txtSexo = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
+        Me.txtedad = New System.Windows.Forms.TextBox()
+        Me.txtdui = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.grpCodigo.SuspendLayout()
         Me.grpDatos.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grpCodigo
         '
         Me.grpCodigo.Controls.Add(Me.TxtCodigo)
+        Me.grpCodigo.Controls.Add(Me.btnAgregar)
         Me.grpCodigo.Controls.Add(Me.btnGenerar)
         Me.grpCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpCodigo.Location = New System.Drawing.Point(35, 62)
         Me.grpCodigo.Name = "grpCodigo"
-        Me.grpCodigo.Size = New System.Drawing.Size(417, 77)
+        Me.grpCodigo.Size = New System.Drawing.Size(888, 77)
         Me.grpCodigo.TabIndex = 0
         Me.grpCodigo.TabStop = False
         Me.grpCodigo.Text = "Generar Código"
@@ -70,11 +80,17 @@ Partial Class RegistroAlumno
         '
         'grpDatos
         '
+        Me.grpDatos.Controls.Add(Me.Label5)
+        Me.grpDatos.Controls.Add(Me.Label6)
+        Me.grpDatos.Controls.Add(Me.Label7)
+        Me.grpDatos.Controls.Add(Me.txtcorreo)
+        Me.grpDatos.Controls.Add(Me.txtedad)
+        Me.grpDatos.Controls.Add(Me.txtdui)
+        Me.grpDatos.Controls.Add(Me.DataGridView1)
         Me.grpDatos.Controls.Add(Me.Label4)
         Me.grpDatos.Controls.Add(Me.Label3)
         Me.grpDatos.Controls.Add(Me.Label2)
         Me.grpDatos.Controls.Add(Me.Label1)
-        Me.grpDatos.Controls.Add(Me.btnAgregar)
         Me.grpDatos.Controls.Add(Me.txtDireccion)
         Me.grpDatos.Controls.Add(Me.txtSexo)
         Me.grpDatos.Controls.Add(Me.txtApellido)
@@ -82,10 +98,18 @@ Partial Class RegistroAlumno
         Me.grpDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpDatos.Location = New System.Drawing.Point(35, 161)
         Me.grpDatos.Name = "grpDatos"
-        Me.grpDatos.Size = New System.Drawing.Size(753, 264)
+        Me.grpDatos.Size = New System.Drawing.Size(888, 348)
         Me.grpDatos.TabIndex = 1
         Me.grpDatos.TabStop = False
         Me.grpDatos.Text = "Datos de Alumno"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(18, 195)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(864, 147)
+        Me.DataGridView1.TabIndex = 8
         '
         'Label4
         '
@@ -125,7 +149,7 @@ Partial Class RegistroAlumno
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(257, 192)
+        Me.btnAgregar.Location = New System.Drawing.Point(659, 23)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(148, 34)
         Me.btnAgregar.TabIndex = 2
@@ -160,11 +184,70 @@ Partial Class RegistroAlumno
         Me.txtNombre.Size = New System.Drawing.Size(253, 24)
         Me.txtNombre.TabIndex = 0
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(462, 74)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(55, 18)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Correo"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(462, 113)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(42, 18)
+        Me.Label6.TabIndex = 13
+        Me.Label6.Text = "Edad"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(462, 35)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(33, 18)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "DUI"
+        '
+        'txtcorreo
+        '
+        Me.txtcorreo.Location = New System.Drawing.Point(599, 74)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(253, 24)
+        Me.txtcorreo.TabIndex = 11
+        '
+        'txtedad
+        '
+        Me.txtedad.Location = New System.Drawing.Point(599, 113)
+        Me.txtedad.Name = "txtedad"
+        Me.txtedad.Size = New System.Drawing.Size(65, 24)
+        Me.txtedad.TabIndex = 10
+        '
+        'txtdui
+        '
+        Me.txtdui.Location = New System.Drawing.Point(599, 35)
+        Me.txtdui.Name = "txtdui"
+        Me.txtdui.Size = New System.Drawing.Size(253, 24)
+        Me.txtdui.TabIndex = 9
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(270, 18)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(391, 26)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "INGRESO DE DATOS ESTUDIANTES"
+        '
         'RegistroAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(935, 521)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.grpDatos)
         Me.Controls.Add(Me.grpCodigo)
         Me.Name = "RegistroAlumno"
@@ -173,7 +256,9 @@ Partial Class RegistroAlumno
         Me.grpCodigo.PerformLayout()
         Me.grpDatos.ResumeLayout(False)
         Me.grpDatos.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -190,4 +275,12 @@ Partial Class RegistroAlumno
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtcorreo As TextBox
+    Friend WithEvents txtedad As TextBox
+    Friend WithEvents txtdui As TextBox
+    Friend WithEvents Label8 As Label
 End Class

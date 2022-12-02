@@ -1,18 +1,21 @@
 ﻿Public Class Alumno
 
-    'Declaración de variables
-    Private Codigo As String
+    'Declaración de propiedades
+    Private codigo As String
     Private nombre As String
     Private apellido As String
-    Private sexo As String
+    Private genero As String
     Private direccion As String
+    Private dui As String
+    Private edad As String
+    Private correo As String
 
-    'datos completos
+    'Indica si los datonos ingresados estan completos
     Private datosCompletos As Boolean
 
-    'Metodos
+    'Metodoss de la clase
 
-    'Procesar nombre
+    'Método para nombre
     Public Property nombreAlumno() As String
         Get
             Return nombre
@@ -22,8 +25,8 @@
         End Set
     End Property
 
-    'Procesar apellido
-    Private Property ApellidoAlumno() As String
+    'Método para apellido
+    Public Property apellidoAlumno() As String
         Get
             Return apellido
         End Get
@@ -32,18 +35,18 @@
         End Set
     End Property
 
-    'Procesar genero
-    Private Property sexoAlumno() As String
+    'Método para genero
+    Public Property generoAlumno() As String
         Get
-            Return sexo
+            Return genero
         End Get
         Set(value As String)
-            sexo = value
+            genero = value
         End Set
     End Property
 
-    'Procesar direccion
-    Private Property direccionAlumno() As String
+    'Método para direccion
+    Public Property direccionAlumno() As String
         Get
             Return direccion
         End Get
@@ -52,74 +55,119 @@
         End Set
     End Property
 
-    'metodo datos aceptados
+    'Método para dui
+    Public Property duiAlumno() As String
+        Get
+            Return dui
+        End Get
+        Set(value As String)
+            dui = value
+        End Set
+    End Property
+
+    'Método para edad
+    Public Property edadAlumno() As String
+        Get
+            Return edad
+        End Get
+        Set(value As String)
+            edad = value
+        End Set
+    End Property
+
+    'Método para correo
+    Public Property correoAlumno() As String
+        Get
+            Return correo
+        End Get
+        Set(value As String)
+            correo = value
+        End Set
+    End Property
+
     Public ReadOnly Property datosAceptados() As Boolean
         Get
             Return datosCompletos
         End Get
     End Property
 
-    'Constructor de clase
+    'Constructor de la clase
     Public Sub New()
         datosCompletos = False
     End Sub
 
+    Public Sub datosAlumno(ByVal codigoA As String,
+                           ByVal nombreA As String,
+                           ByVal apellidoA As String,
+                           ByVal generoA As String,
+                           ByVal direccionA As String,
+                           ByVal duiA As String,
+                           ByVal edadA As String,
+                           ByVal correoA As String
+                           )
 
-    'Determina si los datos ingresados son correctos.
-    Public Sub datosAlumno(ByVal codigoA As String, ByVal nombreA As String, ByVal apellidoA As String, ByVal sexoA As String, ByVal direccionA As String)
-
-        datosCompletos = False 'si los datos son incorrectos
+        datosCompletos = False
 
         If codigoA.Length = 0 Then
-            MsgBox("Debe generar el código del alumno")
+            MsgBox("Debe generar el código")
         Else
-            Codigo = codigoA
+            codigo = codigoA
         End If
 
         If nombreA.Length = 0 Then
-            MsgBox("Debe escribir el nombre del alumno")
+            MsgBox("Debe agregar nombre")
         Else
             nombre = nombreA
         End If
 
         If apellidoA.Length = 0 Then
-            MsgBox("Debe escribir apellido del alumno")
+            MsgBox("Debe agregar apellido")
         Else
             apellido = apellidoA
         End If
 
-        If sexoA.Length = 0 Then
-            MsgBox("Debe escribir el sexo del alumno")
+        If generoA.Length = 0 Then
+            MsgBox("Debe agregar genero")
         Else
-            sexo = sexoA
-        End If
-
-        If sexoA = "F" Or sexoA = "M" Then
-            MsgBox("Debe esdcribir F para femenido o M para masculino")
+            genero = generoA
         End If
 
         If direccionA.Length = 0 Then
-            MsgBox("Debe escribir dirección del alumno")
+            MsgBox("Debe agregar direccion")
         Else
             direccion = direccionA
-            datosCompletos = True
+        End If
+
+        If duiA.Length = 0 Then
+            MsgBox("Debe agregar dui")
+        Else
+            dui = duiA
+        End If
+
+        If edadA.Length = 0 Then
+            MsgBox("Debe agregar edad")
+        Else
+            edad = edadA
+        End If
+
+        If correoA.Length = 0 Then
+            MsgBox("Debe agregar correo")
+        Else
+            correo = correoA
         End If
 
     End Sub
 
     Public Function generarCodigo(ByVal nombre As String)
+
         Dim valor1 As String
         Dim valor2 As String
         Dim numero As Single
 
-        'Primera letra del nombre en mayuscula
         valor1 = UCase(Left(nombre, 1))
-        'Ultimas dos letras del nombre
         valor2 = Right(nombre, 2)
-        'Generacion de numero aleatorio
         numero = Int(Rnd() * 1000) + 65
 
-        'Retornar codigo generado
         Return valor1 & numero & valor2
 
     End Function

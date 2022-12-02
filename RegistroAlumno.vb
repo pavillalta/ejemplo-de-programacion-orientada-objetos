@@ -1,6 +1,6 @@
 ﻿Public Class RegistroAlumno
 
-    Dim alumno As New Alumno
+    Dim alumno As New AlumnoCopy
 
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
 
