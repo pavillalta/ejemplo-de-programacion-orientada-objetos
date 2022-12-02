@@ -138,8 +138,8 @@
             direccion = direccionA
         End If
 
-        If duiA.Length = 0 Then
-            MsgBox("Debe agregar dui")
+        If duiA.Length > 0 And duiA.Length < 9 Then
+            MsgBox("Debe agregar dui de formato 00000000-0")
         Else
             dui = duiA
         End If

@@ -15,6 +15,7 @@
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
+
         alumno.datosAlumno(Txtcodigo.Text,
                            txtnombre.Text,
                            txtapellido.Text,
