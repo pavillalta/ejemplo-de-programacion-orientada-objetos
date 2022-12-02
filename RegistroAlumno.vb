@@ -4,25 +4,47 @@
 
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
 
-        If txtNombre.Text = "" Then
+        If txtnombre.Text = "" Then
             MsgBox("Debe agregar un nombre")
 
         Else
-            TxtCodigo.Text = alumno.generarCodigo(txtNombre.Text)
-
-            'Datagridview.Rows.Add(TxtFecha.Text, TxtDeposito.Text)
-
+            Txtcodigo.Text = alumno.generarCodigo(txtnombre.Text)
         End If
 
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
-        alumno.datosAlumno(TxtCodigo.Text, txtNombre.Text, txtApellido.Text, txtSexo.Text, txtDireccion.Text, txtdui.Text, txtedad.Text, txtcorreo.Text)
+        alumno.datosAlumno(Txtcodigo.Text,
+                           txtnombre.Text,
+                           txtapellido.Text,
+                           txtgenero.Text,
+                           txtdireccion.Text,
+                           txtdui.Text,
+                           txtedad.Text,
+                           txtcorreo.Text)
+
+        datosAlumno.Rows.Add(Txtcodigo.Text,
+                             alumno.nombreAlumno,
+                             alumno.apellidoAlumno,
+                             alumno.generoAlumno,
+                             alumno.direccionAlumno,
+                             alumno.duiAlumno,
+                             alumno.edadAlumno,
+                             alumno.correoAlumno)
 
         If alumno.datosAceptados Then
-            MsgBox("Datos de " & alumno.nombreAlumno & "Registrados")
+            MsgBox("Datos de " & alumno.nombreAlumno & "Registrados con Éxito")
         End If
+
+        Txtcodigo.Text = ""
+        txtnombre.Text = ""
+        txtapellido.Text = ""
+        txtgenero.Text = ""
+        txtdireccion.Text = ""
+        txtdui.Text = ""
+        txtedad.Text = ""
+        txtcorreo.Text = ""
 
     End Sub
 

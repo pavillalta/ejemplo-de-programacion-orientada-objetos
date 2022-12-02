@@ -23,34 +23,42 @@ Partial Class RegistroAlumno
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grpCodigo = New System.Windows.Forms.GroupBox()
-        Me.TxtCodigo = New System.Windows.Forms.TextBox()
+        Me.Txtcodigo = New System.Windows.Forms.TextBox()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnGenerar = New System.Windows.Forms.Button()
         Me.grpDatos = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
-        Me.txtSexo = New System.Windows.Forms.TextBox()
-        Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.txtedad = New System.Windows.Forms.TextBox()
         Me.txtdui = New System.Windows.Forms.TextBox()
+        Me.datosAlumno = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
+        Me.txtgenero = New System.Windows.Forms.TextBox()
+        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grpCodigo.SuspendLayout()
         Me.grpDatos.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datosAlumno, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grpCodigo
         '
-        Me.grpCodigo.Controls.Add(Me.TxtCodigo)
+        Me.grpCodigo.Controls.Add(Me.Txtcodigo)
         Me.grpCodigo.Controls.Add(Me.btnAgregar)
         Me.grpCodigo.Controls.Add(Me.btnGenerar)
         Me.grpCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -61,13 +69,22 @@ Partial Class RegistroAlumno
         Me.grpCodigo.TabStop = False
         Me.grpCodigo.Text = "Generar Código"
         '
-        'TxtCodigo
+        'Txtcodigo
         '
-        Me.TxtCodigo.Location = New System.Drawing.Point(18, 36)
-        Me.TxtCodigo.Name = "TxtCodigo"
-        Me.TxtCodigo.ReadOnly = True
-        Me.TxtCodigo.Size = New System.Drawing.Size(197, 24)
-        Me.TxtCodigo.TabIndex = 1
+        Me.Txtcodigo.Location = New System.Drawing.Point(18, 36)
+        Me.Txtcodigo.Name = "Txtcodigo"
+        Me.Txtcodigo.ReadOnly = True
+        Me.Txtcodigo.Size = New System.Drawing.Size(197, 24)
+        Me.Txtcodigo.TabIndex = 1
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Location = New System.Drawing.Point(659, 23)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(148, 34)
+        Me.btnAgregar.TabIndex = 2
+        Me.btnAgregar.Text = "Agregar Alumno"
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'btnGenerar
         '
@@ -86,15 +103,15 @@ Partial Class RegistroAlumno
         Me.grpDatos.Controls.Add(Me.txtcorreo)
         Me.grpDatos.Controls.Add(Me.txtedad)
         Me.grpDatos.Controls.Add(Me.txtdui)
-        Me.grpDatos.Controls.Add(Me.DataGridView1)
+        Me.grpDatos.Controls.Add(Me.datosAlumno)
         Me.grpDatos.Controls.Add(Me.Label4)
         Me.grpDatos.Controls.Add(Me.Label3)
         Me.grpDatos.Controls.Add(Me.Label2)
         Me.grpDatos.Controls.Add(Me.Label1)
-        Me.grpDatos.Controls.Add(Me.txtDireccion)
-        Me.grpDatos.Controls.Add(Me.txtSexo)
-        Me.grpDatos.Controls.Add(Me.txtApellido)
-        Me.grpDatos.Controls.Add(Me.txtNombre)
+        Me.grpDatos.Controls.Add(Me.txtdireccion)
+        Me.grpDatos.Controls.Add(Me.txtgenero)
+        Me.grpDatos.Controls.Add(Me.txtapellido)
+        Me.grpDatos.Controls.Add(Me.txtnombre)
         Me.grpDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpDatos.Location = New System.Drawing.Point(35, 161)
         Me.grpDatos.Name = "grpDatos"
@@ -102,87 +119,6 @@ Partial Class RegistroAlumno
         Me.grpDatos.TabIndex = 1
         Me.grpDatos.TabStop = False
         Me.grpDatos.Text = "Datos de Alumno"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(18, 195)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(864, 147)
-        Me.DataGridView1.TabIndex = 8
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 152)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 18)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Dirección"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(15, 113)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 18)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Género"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 74)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 18)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Apellido"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(15, 35)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 18)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Nombre"
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Location = New System.Drawing.Point(659, 23)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(148, 34)
-        Me.btnAgregar.TabIndex = 2
-        Me.btnAgregar.Text = "Agregar Alumno"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.Location = New System.Drawing.Point(152, 152)
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(253, 24)
-        Me.txtDireccion.TabIndex = 3
-        '
-        'txtSexo
-        '
-        Me.txtSexo.Location = New System.Drawing.Point(152, 113)
-        Me.txtSexo.Name = "txtSexo"
-        Me.txtSexo.Size = New System.Drawing.Size(79, 24)
-        Me.txtSexo.TabIndex = 2
-        '
-        'txtApellido
-        '
-        Me.txtApellido.Location = New System.Drawing.Point(152, 74)
-        Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(253, 24)
-        Me.txtApellido.TabIndex = 1
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(152, 35)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(253, 24)
-        Me.txtNombre.TabIndex = 0
         '
         'Label5
         '
@@ -232,6 +168,79 @@ Partial Class RegistroAlumno
         Me.txtdui.Size = New System.Drawing.Size(253, 24)
         Me.txtdui.TabIndex = 9
         '
+        'datosAlumno
+        '
+        Me.datosAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datosAlumno.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
+        Me.datosAlumno.Location = New System.Drawing.Point(18, 195)
+        Me.datosAlumno.Name = "datosAlumno"
+        Me.datosAlumno.Size = New System.Drawing.Size(864, 147)
+        Me.datosAlumno.TabIndex = 8
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(15, 152)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 18)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Dirección"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(15, 113)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(58, 18)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Género"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(15, 74)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 18)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Apellido"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 35)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 18)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Nombre"
+        '
+        'txtdireccion
+        '
+        Me.txtdireccion.Location = New System.Drawing.Point(152, 152)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(253, 24)
+        Me.txtdireccion.TabIndex = 3
+        '
+        'txtgenero
+        '
+        Me.txtgenero.Location = New System.Drawing.Point(152, 113)
+        Me.txtgenero.Name = "txtgenero"
+        Me.txtgenero.Size = New System.Drawing.Size(79, 24)
+        Me.txtgenero.TabIndex = 2
+        '
+        'txtapellido
+        '
+        Me.txtapellido.Location = New System.Drawing.Point(152, 74)
+        Me.txtapellido.Name = "txtapellido"
+        Me.txtapellido.Size = New System.Drawing.Size(253, 24)
+        Me.txtapellido.TabIndex = 1
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(152, 35)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(253, 24)
+        Me.txtnombre.TabIndex = 0
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -241,6 +250,46 @@ Partial Class RegistroAlumno
         Me.Label8.Size = New System.Drawing.Size(391, 26)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "INGRESO DE DATOS ESTUDIANTES"
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Código"
+        Me.Column8.Name = "Column8"
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Nombre"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Apellido"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Genero"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Dirección"
+        Me.Column4.Name = "Column4"
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "DUI"
+        Me.Column5.Name = "Column5"
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Edad"
+        Me.Column6.Name = "Column6"
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Correo"
+        Me.Column7.Name = "Column7"
         '
         'RegistroAlumno
         '
@@ -256,7 +305,7 @@ Partial Class RegistroAlumno
         Me.grpCodigo.PerformLayout()
         Me.grpDatos.ResumeLayout(False)
         Me.grpDatos.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datosAlumno, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,18 +313,18 @@ Partial Class RegistroAlumno
 
     Friend WithEvents grpCodigo As GroupBox
     Friend WithEvents grpDatos As GroupBox
-    Friend WithEvents TxtCodigo As TextBox
+    Friend WithEvents Txtcodigo As TextBox
     Friend WithEvents btnGenerar As Button
     Friend WithEvents btnAgregar As Button
-    Friend WithEvents txtDireccion As TextBox
-    Friend WithEvents txtSexo As TextBox
-    Friend WithEvents txtApellido As TextBox
-    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtdireccion As TextBox
+    Friend WithEvents txtgenero As TextBox
+    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents datosAlumno As DataGridView
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
@@ -283,4 +332,12 @@ Partial Class RegistroAlumno
     Friend WithEvents txtedad As TextBox
     Friend WithEvents txtdui As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
 End Class
